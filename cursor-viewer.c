@@ -43,7 +43,6 @@ registry_handle_global(
     const char *interface, uint32_t version)
 {
     struct cursor_viewer *viewer = data;
-    printf("interface=%s name=%0x version=%d\n", interface, name, version);
     if (strcmp(interface, "wl_compositor") == 0)
         viewer->compositor =
             wl_registry_bind(registry, name, &wl_compositor_interface, 1);
