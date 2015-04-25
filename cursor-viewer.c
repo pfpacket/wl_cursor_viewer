@@ -189,7 +189,7 @@ cursor_viewer_show_cursor(struct cursor_viewer *viewer, const char *name)
     wl_surface_set_user_data(cursor->surface, viewer);
 
     cursor->cursor = wl_cursor_theme_get_cursor(viewer->cursor_theme, name);
-    if (!cursor || cursor->cursor->image_count < 1) {
+    if (!cursor->cursor || cursor->cursor->image_count < 1) {
         printf("No such cursor: %s\n", name);
         cursor_surface_destroy(cursor);
         return NULL;
