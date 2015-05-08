@@ -28,7 +28,7 @@ struct cursor_surface {
     struct wl_callback      *frame;
 };
 
-static sig_atomic_t running = 1;
+static volatile sig_atomic_t running = 1;
 
 static void
 die(const char msg[])
